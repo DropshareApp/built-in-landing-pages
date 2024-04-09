@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>__FILENAME__ - shared with Dropshare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://dropshare.app/favicon.png" />
+    <link
+      rel="preconnect"
+      href="https://cdn.tailwindcss.com"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Manrope', sans-serif;
+      }
+
+      .filetype {
+        text-transform: uppercase;
+      }
+
+      .imagePreview {
+        margin: 0 auto;
+      }
+
+      .imagePreview,
+      .imagePreview > :first-child {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@200..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content="Dropshare http://dropshare.app" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image" content="__PREVIEWURL__" [^] />
+    <meta property="twitter:title" content="__FILENAME__" />
+    <meta
+      property="twitter:description"
+      content="__FILENAME__ - shared with Dropshare"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        const file = '__PREVIEWURL__';
+        const extension = file.split('.').pop();
+        const imageFormats = [
+          'jpg',
+          'jpeg',
+          'png',
+          'gif',
+          'bmp',
+          'svg',
+          'webp',
+          'tiff',
+          'heif',
+          'ico',
+        ];
+        const videoFormats = [
+          'mp4',
+          'mov',
+          'wmv',
+          'flv',
+          'avi',
+          'mkv',
+          'webm',
+          'mpeg',
+          'mpg',
+          'ogv',
+        ];
+        const highlightCompatibleFormats = [
+          'bash',
+          'clj',
+          'cljc',
+          'cljs',
+          'cpp',
+          'cs',
+          'css',
+          'cxx',
+          'erl',
+          'go',
+          'h',
+          'hpp',
+          'hs',
+          'htm',
+          'html',
+          'java',
+          'js',
+          'json',
+          'kt',
+          'kts',
+          'lhs',
+          'lua',
+          'markdown',
+          'md',
+          'php',
+          'pl',
+          'pls',
+          'plsql',
+          'pm',
+          'ps1',
+          'py',
+          'rb',
+          'rs',
+          'scala',
+          'scss',
+          'sh',
+          'sql',
+          'swift',
+          'tf',
+          'tfvars',
+          'ts',
+          'tsx',
+          'xml',
+          'yaml',
+          'yml',
+          'txt',
+          'Dockerfile',
+        ];
+
+        const allowedExtensions = [
+          ...imageFormats,
+          ...videoFormats,
+          ...highlightCompatibleFormats,
+        ];
+
+        $('.filetype').text(`.${extension}`);
+
+        if (!allowedExtensions.includes(extension)) {
+          $('#preview').hide();
+        } else {
+          $('#placeholder').hide();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="flex flex-col w-full min-h-screen mx-auto">
+      <!-- Header -->
+      <div>
+        <div class="flex items-center justify-between py-6 px-4 sm:px-12 gap-4">
+          <span></span>
+          <a
+            href="https://dropshare.app/"
+            class="text-xs hover:text-[#009B72] font-light transition-all duration-300"
+          >
+          Share files with Dropshare <svg class="h-2 w-2 inline" fill=none viewBox="0 0 14 10"xmlns=http://www.w3.org/2000/svg aria-hidden=true>
+            <path d="M1 5h12m0 0L9 1m4 4L9 9"stroke-linecap=round stroke-linejoin=round stroke=currentColor stroke-width=2 />
+         </svg>
+          </a>
+        </div>
+        <div class="w-full h-[1px] mb-6 bg-[#DFE1D5]"></div>
+      </div>
+
+      <div
+        class="flex flex-col flex-1 items-center justify-center px-4 text-center"
+      >
+        <h1 class="text-lg sm:text-3xl font-extrabold mb-2">
+          __FILENAME__
+        </h1>
+        <p>__SHAREDATE__</p>
+
+        <!-- Card -->
+        <div class="flex flex-col w-full max-w-2xl">
+          <div class="relative w-full aspect-video my-6 bg-[#E5E6DB]">
+            <div id="preview" class="absolute inset-0 flex" style="overflow:scroll">__PREVIEW__</div>
+
+            <!-- Placeholder -->
+            <div
+              id="placeholder"
+              class="flex flex-col items-center justify-center gap-6 h-full w-full text-[#BABCA6]"
+            >
+              <div class="relative">
+                <svg
+                  class="w-20 h-20 sm:w-36 sm:h-36"
+                  viewBox="0 0 144 144"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M128.333 58.3333V87.5C128.333 116.667 116.667 128.333 87.5001 128.333H52.5001C23.3334 128.333 11.6667 116.667 11.6667 87.5V52.5C11.6667 23.3333 23.3334 11.6667 52.5001 11.6667H81.6667"
+                    stroke="#CBCDB9"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M128.333 58.3333H105C87.5001 58.3333 81.6667 52.5 81.6667 35V11.6667L128.333 58.3333Z"
+                    stroke="#CBCDB9"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p
+                  class="filetype absolute inset-0 flex items-center justify-center translate-y-2 sm:translate-y-4 text-sm sm:text-base"
+                ></p>
+              </div>
+              <p class="text-sm text-center max-w-40 sm:max-w-none">
+                Preview for
+                <span class="filetype">this file</span> format is not available
+              </p>
+            </div>
+          </div>
+
+          <!-- File information -->
+          <div class="flex flex-col sm:flex-row justify-between gap-4 mb-5">
+            <div>
+              <label class="text-sm font-light truncate"> File Type </label>
+              <p class="font-semibold truncate"><span class="filetype">Unknown</span></p>
+            </div>
+            <a
+              href="__PATH__"
+              download="__FILENAME__"
+              class="px-5 py-4 mx-auto md:mx-0 bg-black text-white font-semibold hover:text-[#009B72] transition-all duration-300 rounded-full"
+            >
+              Download (__FILESIZE__)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
