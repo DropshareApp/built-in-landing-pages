@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>__FILENAME__ - shared with Dropshare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://dropshare.app/favicon.png" />
+    <link
+      rel="preconnect"
+      href="https://cdn.tailwindcss.com"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        background-color: #87c3d4;
+      }
+
+      body {
+        font-family: 'Red Hat Display', sans-serif;
+        background-image: url(https://source.unsplash.com/featured/1920x1080?landscape,scenic,nature,forrest,water,sea);
+        background-size: cover;
+      }
+
+      .filetype {
+        text-transform: uppercase;
+      }
+
+      .imagePreview {
+        margin: 0 auto;
+      }
+
+      .imagePreview,
+      .imagePreview > :first-child {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content="Dropshare http://dropshare.app" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image" content="__PREVIEWURL__" [^] />
+    <meta property="twitter:title" content="__FILENAME__" />
+    <meta
+      property="twitter:description"
+      content="__FILENAME__ - shared with Dropshare"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        const file = '__PREVIEWURL__';
+        const extension = file.split('.').pop();
+        const imageFormats = [
+          'jpg',
+          'jpeg',
+          'png',
+          'gif',
+          'bmp',
+          'svg',
+          'webp',
+          'tiff',
+          'heif',
+          'ico',
+        ];
+        const videoFormats = [
+          'mp4',
+          'mov',
+          'wmv',
+          'flv',
+          'avi',
+          'mkv',
+          'webm',
+          'mpeg',
+          'mpg',
+          'ogv',
+        ];
+        const highlightCompatibleFormats = [
+          'bash',
+          'clj',
+          'cljc',
+          'cljs',
+          'cpp',
+          'cs',
+          'css',
+          'cxx',
+          'erl',
+          'go',
+          'h',
+          'hpp',
+          'hs',
+          'htm',
+          'html',
+          'java',
+          'js',
+          'json',
+          'kt',
+          'kts',
+          'lhs',
+          'lua',
+          'markdown',
+          'md',
+          'php',
+          'pl',
+          'pls',
+          'plsql',
+          'pm',
+          'ps1',
+          'py',
+          'rb',
+          'rs',
+          'scala',
+          'scss',
+          'sh',
+          'sql',
+          'swift',
+          'tf',
+          'tfvars',
+          'ts',
+          'tsx',
+          'xml',
+          'yaml',
+          'yml',
+          'txt',
+          'Dockerfile',
+        ];
+
+        const allowedExtensions = [
+          ...imageFormats,
+          ...videoFormats,
+          ...highlightCompatibleFormats,
+        ];
+
+        $('.filetype').text(`.${extension}`);
+
+        if (!allowedExtensions.includes(extension)) {
+          $('#preview').hide();
+        } else {
+          $('#placeholder').hide();
+        }
+      });
+    </script>
+  </head>
+
+  <body class="bg-cover bg-center">
+    <div class="flex flex-col min-h-screen px-4 py-9">
+      <!-- Header -->
+      <div class="flex flex-col flex-1 items-center justify-center">
+        <!-- Card -->
+        <div
+          class="flex flex-col items-center w-full max-w-2xl p-4 sm:p-6 my-6 rounded-[32px] bg-white"
+        >
+          <div
+            class="flex flex-col sm:flex-row w-full justify-between sm:items-center sm:gap-4 text-[#504D4D]"
+          >
+            <p class="font-bold truncate">__FILENAME__<br />
+              <span class="font-normal">__SHAREDATE__</span></p>
+            <p class="text-sm">__FILESIZE__</p>
+          </div>
+          <div
+            class="relative w-full aspect-[1.73/1] mt-4 bg-[#E5E6DB] overflow-hidden rounded-3xl"
+          >
+            <div id="preview" class="absolute inset-0 flex" style="overflow:scroll">__PREVIEW__</div>
+
+            <!-- Placeholder -->
+            <div
+              id="placeholder"
+              class="flex flex-col items-center justify-center gap-6 h-full w-full text-[#BABCA6]"
+            >
+              <div class="relative">
+                <svg
+                  class="w-20 h-20 sm:w-36 sm:h-36"
+                  viewBox="0 0 144 144"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M128.333 58.3333V87.5C128.333 116.667 116.667 128.333 87.5001 128.333H52.5001C23.3334 128.333 11.6667 116.667 11.6667 87.5V52.5C11.6667 23.3333 23.3334 11.6667 52.5001 11.6667H81.6667"
+                    stroke="#CBCDB9"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M128.333 58.3333H105C87.5001 58.3333 81.6667 52.5 81.6667 35V11.6667L128.333 58.3333Z"
+                    stroke="#CBCDB9"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p
+                  class="filetype absolute inset-0 flex items-center justify-center translate-y-2 sm:translate-y-4 text-sm sm:text-base"
+                ></p>
+              </div>
+              <p class="text-sm text-center max-w-40 sm:max-w-none">
+                Preview for
+                <span class="filetype">this file</span> format is not available
+              </p>
+            </div>
+          </div>
+          <a
+            href="__PATH__"
+            download="__FILENAME__"
+            class="mt-4 sm:mt-6 px-5 py-4 bg-[#1188AA] text-sm text-white font-semibold hover:text-black rounded-full transition-all duration-300"
+          >
+            Download (__FILESIZE__)
+          </a>
+        </div>
+
+        <!-- Homepage CTA -->
+        <p
+          class="text-xs font-semibold text-white rounded-3xl py-1 px-3 text-center max-w-52 sm:max-w-none"
+        >
+          <a
+            class="hover:text-[#1188AA] transition-all duration-300"
+            href="https://dropshare.app/"
+            >
+            Share files with Dropshare <svg class="h-2 w-2 inline" fill=none viewBox="0 0 14 10"xmlns=http://www.w3.org/2000/svg aria-hidden=true>
+              <path d="M1 5h12m0 0L9 1m4 4L9 9"stroke-linecap=round stroke-linejoin=round stroke=currentColor stroke-width=2 />
+           </svg>
+          </a>
+        </p>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    /*function fetchRandomUnsplashImage() {
+      const url = `https://source.unsplash.com/featured/1920x1080?landscape`;
+      const placeholder =
+        'https://images.unsplash.com/photo-1579762593175-20226054cad0?q=80&w=1872&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+
+      fetch(url)
+        .then((response) => {
+          if (!response.ok) {
+            return null;
+          }
+          return response.json();
+        })
+        .then((data) => {
+          $('body').css('background-image', 'url(' + data.urls.regular + ')');
+        })
+        .catch((error) => {
+          $('body').css('background-image', 'url(' + placeholder + ')');
+        });
+    }
+
+    window.addEventListener('load', fetchRandomUnsplashImage);*/
+  </script>
+</html>
