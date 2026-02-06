@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Dropshare http://dropshare.app">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="__PREVIEWURL__">
+    <meta property="twitter:title" content="__FILENAME__">
+    <meta property="og:title" content="__FILENAME__">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="__PREVIEWURL__">
+    <title>__FILENAME__</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            background: #0f0f1a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .aurora-bg {
+            position: fixed;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(120, 80, 255, 0.25), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 20%, rgba(255, 100, 180, 0.2), transparent),
+                radial-gradient(ellipse 50% 60% at 60% 80%, rgba(80, 200, 255, 0.2), transparent);
+            animation: aurora 20s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+
+        @keyframes aurora {
+            0% {
+                background: 
+                    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(120, 80, 255, 0.25), transparent),
+                    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(255, 100, 180, 0.2), transparent),
+                    radial-gradient(ellipse 50% 60% at 60% 80%, rgba(80, 200, 255, 0.2), transparent);
+            }
+            100% {
+                background: 
+                    radial-gradient(ellipse 70% 60% at 30% 60%, rgba(80, 200, 255, 0.25), transparent),
+                    radial-gradient(ellipse 50% 50% at 70% 30%, rgba(120, 80, 255, 0.2), transparent),
+                    radial-gradient(ellipse 60% 40% at 40% 20%, rgba(255, 100, 180, 0.2), transparent);
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            padding: 2rem;
+            max-width: 560px;
+            width: 100%;
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+
+        .preview-wrapper {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            margin-bottom: 1.75rem;
+            overflow: hidden;
+        }
+
+        .preview-wrapper img,
+        .preview-wrapper video {
+            max-width: 100%;
+            max-height: 55vh;
+            border-radius: 12px;
+        }
+
+        .preview-wrapper iframe {
+            width: 100%;
+            height: 50vh;
+            border: none;
+            border-radius: 12px;
+        }
+
+        .file-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .file-icon .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(120, 80, 255, 0.3), rgba(255, 100, 180, 0.3));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .file-icon svg {
+            width: 36px;
+            height: 36px;
+            stroke: rgba(255, 255, 255, 0.8);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .file-icon span {
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 400;
+        }
+
+        .file-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            word-break: break-word;
+            line-height: 1.35;
+        }
+
+        .meta-row {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.75rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9375rem;
+        }
+
+        .meta-item svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            opacity: 0.7;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.625rem;
+            width: 100%;
+            background: linear-gradient(135deg, #7850ff 0%, #ff64b4 100%);
+            color: #fff;
+            padding: 1.125rem 2rem;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(120, 80, 255, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 12px 40px rgba(120, 80, 255, 0.45);
+        }
+
+        .download-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            fill: none;
+        }
+
+        @media (max-width: 540px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+                border-radius: 24px;
+            }
+
+            .preview-wrapper {
+                min-height: 200px;
+                padding: 1rem;
+                border-radius: 16px;
+                margin-bottom: 1.5rem;
+            }
+
+            .file-icon .icon-circle {
+                width: 64px;
+                height: 64px;
+            }
+
+            .file-icon svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .file-name {
+                font-size: 1.25rem;
+            }
+
+            .meta-row {
+                gap: 1rem;
+            }
+
+            .meta-item {
+                font-size: 0.875rem;
+            }
+
+            .download-btn {
+                padding: 1rem 1.5rem;
+                border-radius: 14px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var fileType = '__FILETYPE__';
+            var mediaTypes = ['public.png', 'public.jpeg', 'public.image', 'com.apple.quicktime-movie', 'public.mpeg-4', 'public.movie'];
+            var previewWrapper = document.querySelector('.preview-wrapper');
+            var hasMediaPreview = mediaTypes.some(function(type) {
+                return fileType.indexOf(type) !== -1 || type.indexOf(fileType) !== -1;
+            });
+            
+            var hasImg = previewWrapper.querySelector('img');
+            var hasVideo = previewWrapper.querySelector('video');
+            
+            if (!hasImg && !hasVideo && !hasMediaPreview) {
+                previewWrapper.innerHTML = '<div class="file-icon"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><span>File ready</span></div>';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="aurora-bg"></div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="preview-wrapper">
+                __PREVIEW__
+            </div>
+            
+            <h1 class="file-name">__FILENAME__</h1>
+            
+            <div class="meta-row">
+                <div class="meta-item">
+                    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    __FILESIZE__
+                </div>
+                <div class="meta-item">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    __SHAREDATE__
+                </div>
+            </div>
+            
+            <a href="__PATH__" class="download-btn" download="__FILENAME__">
+                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Download
+            </a>
+        </div>
+    </div>
+</body>
+</html>

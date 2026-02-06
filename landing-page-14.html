@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Dropshare http://dropshare.app">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="__PREVIEWURL__">
+    <meta property="twitter:title" content="__FILENAME__">
+    <meta property="og:title" content="__FILENAME__">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="__PREVIEWURL__">
+    <title>__FILENAME__</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            min-height: 100vh;
+            background: #e4e4e7;
+            color: #18181b;
+            padding: 1.5rem;
+        }
+
+        .page {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            border: 3px solid #18181b;
+            background: #fbbf24;
+            padding: 1rem 1.25rem;
+            margin-bottom: -3px;
+        }
+
+        .header h1 {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            word-break: break-all;
+        }
+
+        .preview-box {
+            border: 3px solid #18181b;
+            background: #fff;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .preview-box img,
+        .preview-box video {
+            max-width: 100%;
+            max-height: 65vh;
+            border: 3px solid #18181b;
+        }
+
+        .preview-box iframe {
+            width: 100%;
+            height: 60vh;
+            border: 3px solid #18181b;
+            background: #fff;
+        }
+
+        .file-placeholder {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .file-placeholder .icon-box {
+            width: 80px;
+            height: 100px;
+            border: 3px solid #18181b;
+            background: #f4f4f5;
+            margin: 0 auto 1rem;
+            position: relative;
+        }
+
+        .file-placeholder .icon-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24px;
+            height: 24px;
+            background: #e4e4e7;
+            border-left: 3px solid #18181b;
+            border-bottom: 3px solid #18181b;
+        }
+
+        .file-placeholder p {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .info-bar {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 3px solid #18181b;
+            border-top: none;
+        }
+
+        .info-item {
+            padding: 1rem 1.25rem;
+            border-right: 3px solid #18181b;
+        }
+
+        .info-item:last-child {
+            border-right: none;
+        }
+
+        .info-label {
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #71717a;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-value {
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .download-section {
+            margin-top: 1.5rem;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+            background: #18181b;
+            color: #fff;
+            padding: 1.25rem 2rem;
+            border: 3px solid #18181b;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.1s ease;
+            position: relative;
+        }
+
+        .download-btn::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: -6px;
+            bottom: -6px;
+            background: #fbbf24;
+            z-index: -1;
+            transition: all 0.1s ease;
+        }
+
+        .download-btn:hover {
+            transform: translate(3px, 3px);
+        }
+
+        .download-btn:hover::after {
+            transform: translate(-3px, -3px);
+        }
+
+        .download-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            fill: none;
+        }
+
+        .corner-stamp {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 60px;
+            height: 60px;
+            background: #18181b;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-align: center;
+            line-height: 1.3;
+            transform: rotate(-12deg);
+            border: 2px solid #18181b;
+        }
+
+        @media (max-width: 540px) {
+            body {
+                padding: 1rem;
+            }
+
+            .header h1 {
+                font-size: 0.75rem;
+            }
+
+            .preview-box {
+                min-height: 250px;
+                padding: 1rem;
+            }
+
+            .info-bar {
+                grid-template-columns: 1fr;
+            }
+
+            .info-item {
+                border-right: none;
+                border-bottom: 3px solid #18181b;
+            }
+
+            .info-item:last-child {
+                border-bottom: none;
+            }
+
+            .download-btn {
+                font-size: 0.75rem;
+                padding: 1rem 1.5rem;
+            }
+
+            .corner-stamp {
+                width: 50px;
+                height: 50px;
+                font-size: 0.4375rem;
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var fileType = '__FILETYPE__';
+            var mediaTypes = ['public.png', 'public.jpeg', 'public.image', 'com.apple.quicktime-movie', 'public.mpeg-4', 'public.movie'];
+            var previewBox = document.querySelector('.preview-box');
+            var hasMediaPreview = mediaTypes.some(function(type) {
+                return fileType.indexOf(type) !== -1 || type.indexOf(fileType) !== -1;
+            });
+            
+            var hasImg = previewBox.querySelector('img');
+            var hasVideo = previewBox.querySelector('video');
+            
+            if (!hasImg && !hasVideo && !hasMediaPreview) {
+                previewBox.innerHTML = '<div class="file-placeholder"><div class="icon-box"></div><p>File</p></div>';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <h1>__FILENAME__</h1>
+        </header>
+
+        <div class="preview-box">
+            __PREVIEW__
+        </div>
+
+        <div class="info-bar">
+            <div class="info-item">
+                <div class="info-label">Size</div>
+                <div class="info-value">__FILESIZE__</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Shared</div>
+                <div class="info-value">__SHAREDATE__</div>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <a href="__PATH__" class="download-btn" download="__FILENAME__">
+                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Download
+            </a>
+        </div>
+    </div>
+</body>
+</html>
